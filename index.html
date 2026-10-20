@@ -20,90 +20,93 @@
     --menu:#14b8a6;
     --rival:#64748b;
     --shadow:0 2px 10px rgba(16,20,30,.06);
-    --shadow-hover:0 10px 24px rgba(16,20,30,.12);
+    --shadow-hover:0 8px 18px rgba(16,20,30,.12);
   }
   *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',sans-serif;}
+  html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:'Noto Sans KR',sans-serif;overflow-x:hidden;}
+  img{max-width:100%;}
   a{color:inherit;text-decoration:none;}
-  header{text-align:center;padding:40px 16px 8px;}
-  header h1{font-size:30px;font-weight:900;margin:0 0 6px;letter-spacing:-0.5px;}
-  header p{font-size:13px;color:var(--sub);margin:0;}
+  header{text-align:center;padding:12px 16px 2px;}
+  header h1{font-size:24px;font-weight:700;margin:0;letter-spacing:-0.5px;}
 
-  .wrap{max-width:1180px;margin:0 auto;padding:24px 16px 60px;}
+  .wrap{max-width:1260px;margin:0 auto;padding:18px 18px 30px;}
 
   .section{
     background:var(--card);
     border-radius:18px;
     box-shadow:var(--shadow);
-    padding:24px 26px 28px;
-    margin-bottom:22px;
+    padding:23px 27px 25px;
+    margin-bottom:16px;
   }
   .section-title{
-    display:flex;align-items:center;gap:10px;
-    font-size:18px;font-weight:700;margin:0 0 18px;
+    display:flex;align-items:center;gap:8px;
+    font-size:19px;font-weight:700;margin:0 0 15px;
     padding-left:12px;border-left:5px solid var(--accent,var(--main));
-  }
-  .section-title .count{
-    font-size:12px;font-weight:500;color:#fff;background:var(--accent,var(--main));
-    border-radius:999px;padding:2px 9px;
   }
 
   /* 로고 타일 (메인업무 / 경쟁사) */
   .tile-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
-  .main-grid-row{margin-bottom:16px;}
+  .main-grid-row{margin-bottom:14px;}
   .main-grid-row:last-child{margin-bottom:0;}
   .tile{
     background:#fafbfc;border:1px solid var(--line);border-radius:14px;
-    padding:14px 10px 12px;display:flex;flex-direction:column;align-items:center;gap:8px;
-    transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease;
-    flex:0 1 118px;min-width:104px;max-width:140px;
+    padding:14px 11px 11px;display:flex;flex-direction:column;align-items:center;gap:7px;
+    transition:transform .12s ease,box-shadow .12s ease,border-color .12s ease;
+    flex:0 1 138px;min-width:118px;max-width:162px;
   }
-  a.tile:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover);border-color:transparent;}
-  .tile img{max-width:100%;height:34px;object-fit:contain;}
+  a.tile:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:transparent;}
+  .tile img{max-width:100%;height:35px;object-fit:contain;}
+  .tile.big-icon img{height:48px;}
   .tile.dark{background:#111317;}
-  .tile.dark img{height:26px;}
-  .tile .cap{font-size:12px;font-weight:500;color:var(--ink);text-align:center;line-height:1.3;}
+  .tile.dark img{height:28px;}
+  .tile .cap{font-size:13px;font-weight:500;color:var(--ink);text-align:center;line-height:1.25;}
   .tile.placeholder{border-style:dashed;background:#fff;opacity:.6;cursor:default;}
   .tile.placeholder .cap{color:var(--sub);}
-  .tile.placeholder .tag{font-size:10px;color:#fff;background:var(--sub);border-radius:999px;padding:1px 8px;margin-top:2px;}
+  .tile.placeholder .tag{font-size:10px;color:#fff;background:var(--sub);border-radius:999px;padding:1px 7px;margin-top:1px;}
 
   /* 칩 리스트 (CP/업무/AI) */
-  .chip-grid{grid-template-columns:repeat(3,1fr);display:grid;gap:18px;}
+  .chip-grid{grid-template-columns:repeat(3,1fr);display:grid;gap:16px;}
   @media (max-width:860px){.chip-grid{grid-template-columns:1fr;}}
-  .chip-card{background:#fafbfc;border:1px solid var(--line);border-radius:14px;padding:16px;}
   .chip-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+  .chip-cols{display:flex;gap:8px;align-items:flex-start;flex-wrap:nowrap;}
+  .chip-col{display:flex;flex-direction:column;align-items:flex-start;gap:7px;flex:0 1 auto;min-width:0;}
   .chip{
     display:inline-flex;align-items:center;gap:6px;
     background:#fff;border:1px solid var(--line);border-radius:999px;
-    padding:6px 12px;font-size:13px;font-weight:500;
-    transition:transform .15s ease,box-shadow .15s ease,background .15s ease;
+    padding:6px 11px;font-size:13px;font-weight:500;white-space:nowrap;
+    transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
   }
   a.chip:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);background:#fff;}
-  .chip img{width:15px;height:15px;border-radius:3px;}
+  .chip img{width:16px;height:16px;border-radius:3px;flex:none;}
   .chip.placeholder{border-style:dashed;color:var(--sub);background:transparent;}
-  .chip.placeholder .tag{font-size:10px;color:#fff;background:var(--sub);border-radius:999px;padding:1px 7px;margin-left:2px;}
+  .chip.placeholder .tag{font-size:10px;color:#fff;background:var(--sub);border-radius:999px;padding:1px 6px;margin-left:2px;}
 
-  /* 영업관리시스템 메뉴 (정적 참고용) */
-  .menu-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  /* 영업관리시스템 메뉴 */
+  .menu-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
   @media (max-width:860px){.menu-cols{grid-template-columns:1fr;}}
   .menu-col{display:flex;flex-direction:column;gap:8px;}
   .menu-chip{
     background:#f1fbfa;color:#0f766e;border:1px solid #cdf1ec;
-    border-radius:10px;padding:8px 12px;font-size:13px;font-weight:500;
+    border-radius:10px;padding:8px 14px;font-size:14px;font-weight:500;
+    transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
+    display:flex;align-items:baseline;justify-content:space-between;gap:10px;
   }
+  .menu-chip .m-main{white-space:nowrap;flex-shrink:0;}
+  .menu-chip .m-sub{font-size:12px;font-weight:400;color:#5b9b93;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
+  a.menu-chip:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);background:#e7f8f6;}
 
   /* 경쟁사 */
-  .rival-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .rival-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
   @media (max-width:860px){.rival-grid{grid-template-columns:repeat(2,1fr);}}
   .rival-group{background:#fafbfc;border:1px solid var(--line);border-radius:14px;padding:14px;}
-  .rival-group h3{font-size:13px;font-weight:700;margin:0 0 10px;color:var(--rival);
-    display:flex;align-items:center;gap:6px;}
-  .rival-group h3::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--rival);}
-  .rival-group .tile-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
-  .rival-group .tile{padding:10px 6px;}
+  .rival-group h3{font-size:14px;font-weight:700;margin:0 0 9px;color:var(--rival);
+    display:flex;align-items:center;gap:5px;}
+  .rival-group h3::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--rival);}
+  .rival-group .tile-grid{display:grid;grid-template-columns:repeat(2,1fr);justify-content:flex-start;gap:10px;}
+  .rival-group .tile{width:100%;max-width:none;min-width:0;padding:9px 6px;}
   .rival-group .tile img{height:24px;}
-
-  footer{text-align:center;color:var(--sub);font-size:11px;padding:10px 0 30px;}
+  .rival-group .tile.big-icon img{height:34px;}
 </style>
 
 <script>
@@ -111,21 +114,37 @@
     document.addEventListener('contextmenu', function(e){ e.preventDefault(); });
     document.addEventListener('dragstart', function(e){ e.preventDefault(); });
     document.addEventListener('selectstart', function(e){ e.preventDefault(); });
+
+    // 아이콘 로딩 안정화: 구글 → DuckDuckGo → 기본 아이콘 순서로 시도
+    var FALLBACK_ICON = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48bGluZSB4MT0iMiIgeTE9IjEyIiB4Mj0iMjIiIHkyPSIxMiIvPjxwYXRoIGQ9Ik0xMiAyYTE1LjMgMTUuMyAwIDAgMSA0IDEwIDE1LjMgMTUuMyAwIDAgMS00IDEwIDE1LjMgMTUuMyAwIDAgMS00LTEwIDE1LjMgMTUuMyAwIDAgMSA0LTEweiIvPjwvc3ZnPg==';
+    document.querySelectorAll('img[data-domain]').forEach(function(img){
+      var domain = img.getAttribute('data-domain');
+      var sources = [
+        'https://www.google.com/s2/favicons?sz=64&domain=' + domain,
+        'https://icons.duckduckgo.com/ip3/' + domain + '.ico'
+      ];
+      var idx = 0;
+      function tryNext(){
+        if(idx < sources.length){
+          img.src = sources[idx++];
+        } else {
+          img.onerror = null;
+          img.src = FALLBACK_ICON;
+        }
+      }
+      img.onerror = tryNext;
+      tryNext();
+    });
   });
 </script>
 </head>
 <body>
 
-<header>
-  <h1>업무 사이트 모음</h1>
-  <p>자주 쓰는 업무 사이트 바로가기</p>
-</header>
-
 <div class="wrap">
 
   <!-- 메인 업무 페이지 -->
   <section class="section" style="--accent:var(--main)">
-    <div class="section-title"><span>메인 업무 페이지</span><span class="count">10</span></div>
+    <div class="section-title"><span>메인 업무 페이지</span></div>
     <div class="tile-grid main-grid-row">
       <a class="tile" href="https://portal.wjthinkbig.com/" target="_blank">
         <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjJfMjAx/MDAxNzI2OTk1MzQ4ODIy.H_jxxbXlvVZbbwmqKnKA4IlOdix_UkgKuatppryAZ5Qg.EBjfo6rlBxgAdSIiZeC7Bq44zXFxyikh39kpbl-USWIg.PNG/logo_wjnet.png?type=w1600" alt="웅진넷">
@@ -139,7 +158,7 @@
         <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMzMg/MDAxNzI2OTIxOTE0MTYz.EgWo-VkVfTeqn0CMnrEtnan_1o0SK6jY6-q9247V8Wcg.R-pORh-KnGg7ThaAqCsBa_JtYXIkMrJtx5QD97VVkx0g.PNG/logo_lt.png?type=w1600" alt="러브씽크빅">
         <span class="cap">러브씽크빅</span>
       </a>
-      <a class="tile dark" href="https://academy.wjtb.kr/" target="_blank">
+      <a class="tile" href="https://academy.wjtb.kr/" target="_blank">
         <img src="academy_logo.png" alt="씽크빅 아카데미">
         <span class="cap">씽크빅 아카데미</span>
       </a>
@@ -149,10 +168,6 @@
         <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMzIg/MDAxNzI2OTIxMjkwOTMx.Afwbq57i8BNyvXmxguNEjcvI6ifXqiHL_dmd5PcZ13sg.prVn8H21kQqhgGzNkPD7FB16kApvAcerJjsPQRjbN9sg.PNG/logo_thinkbig.png?type=w1600" alt="웅진씽크빅">
         <span class="cap">웅진씽크빅</span>
       </a>
-      <a class="tile" href="https://www.smartallclass.co.kr/" target="_blank">
-        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfNTkg/MDAxNzI2OTIxMjkwNzk0.nqrB_rGN2shO44S09OyQlWjmAbZgDJqWPQx32ECYIlEg.mVmcal5PrnseiY14Cr65nOFmOWFoXzlNunSFcQTRCG4g.PNG/logo_class.png?type=w1600" alt="스마트올클래스">
-        <span class="cap">스마트올클래스</span>
-      </a>
       <a class="tile" href="https://smartall.wjthinkbig.com/" target="_blank">
         <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTU5/MDAxNzI2OTIxMzgzNzcx.MjP5hORiwZN8C4x3Hbpuhy8UM7U-5BUTKOwqQuvRpnIg.5KSVJ86NIg4qOuCPTcVXdZaXKf5TKTgNuWTwv2OXLTgg.PNG/logo_smartall.png?type=w1600" alt="스마트올">
         <span class="cap">스마트올</span>
@@ -161,9 +176,17 @@
         <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTAx/MDAxNzI2OTIxMzg2NjYz.A4HEOrODTIA-a2DTHQMJphKGKLrfMicfJOx_tO8DIH0g.5gD-M-3pCmaiOSCJh2ZEbPjh7sJxR9r1FT2CRhX7Yp0g.PNG/logo_smartallmid.png?type=w1600" alt="스마트올중학">
         <span class="cap">스마트올중학</span>
       </a>
+      <a class="tile" href="https://www.smartallclass.co.kr/" target="_blank">
+        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfNTkg/MDAxNzI2OTIxMjkwNzk0.nqrB_rGN2shO44S09OyQlWjmAbZgDJqWPQx32ECYIlEg.mVmcal5PrnseiY14Cr65nOFmOWFoXzlNunSFcQTRCG4g.PNG/logo_class.png?type=w1600" alt="스마트올클래스">
+        <span class="cap">스마트올클래스</span>
+      </a>
       <a class="tile" href="https://smartallcp.co.kr/" target="_blank">
         <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjJfMjk4/MDAxNzI2OTk2MDM1OTA1.tWbC0ucb_-ZPL7muTUTKRt7h7ZAyUlJchdbE2HfZo1Qg.LqGgxVndJLeHmN69iqZ05mNldIXzWaYM_XAZUBg-RQ0g.PNG/logo_cp.png?type=w1600" alt="스마트올CP">
         <span class="cap">스마트올CP</span>
+      </a>
+      <a class="tile" href="https://wjtb.udemy.com/organization/home/" target="_blank">
+        <img src="udemy-logo.png" alt="유데미">
+        <span class="cap">유데미</span>
       </a>
       <a class="tile" href="https://cosmic-meerkat-4bd7a9.netlify.app/" target="_blank">
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmY3YTFhIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3QgeD0iNCIgeT0iMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIwIiByeD0iMiIvPjxsaW5lIHgxPSI4IiB5MT0iNiIgeDI9IjE2IiB5Mj0iNiIvPjxsaW5lIHgxPSI4IiB5MT0iMTAiIHgyPSI4LjAxIiB5Mj0iMTAiLz48bGluZSB4MT0iMTIiIHkxPSIxMCIgeDI9IjEyLjAxIiB5Mj0iMTAiLz48bGluZSB4MT0iMTYiIHkxPSIxMCIgeDI9IjE2LjAxIiB5Mj0iMTAiLz48bGluZSB4MT0iOCIgeTE9IjE0IiB4Mj0iOC4wMSIgeTI9IjE0Ii8+PGxpbmUgeDE9IjEyIiB5MT0iMTQiIHgyPSIxMi4wMSIgeTI9IjE0Ii8+PGxpbmUgeDE9IjE2IiB5MT0iMTQiIHgyPSIxNi4wMSIgeTI9IjE0Ii8+PGxpbmUgeDE9IjgiIHkxPSIxOCIgeDI9IjguMDEiIHkyPSIxOCIvPjxsaW5lIHgxPSIxMiIgeTE9IjE4IiB4Mj0iMTIuMDEiIHkyPSIxOCIvPjxsaW5lIHgxPSIxNiIgeTE9IjE4IiB4Mj0iMTYuMDEiIHkyPSIxOCIvPjwvc3ZnPg==" alt="급여계산기">
@@ -172,111 +195,141 @@
     </div>
   </section>
 
-  <!-- CP / 업무 / AI : 3단 -->
-  <div class="chip-grid">
-
-    <section class="section" style="--accent:var(--cp)">
-      <div class="section-title"><span>CP 관련 페이지</span></div>
-      <div class="chip-list">
-        <a class="chip" href="https://docs.google.com/spreadsheets/d/1zbbfdJYLdupmUWwzWXSH58uvrXzxG8oJzLgT8Q_Gj18/edit?gid=2083395296#gid=2083395296" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/docs.google.com.ico" alt="">전국제휴기관
-        </a>
-        <a class="chip" href="https://studyroom-lms.wjthinkbig.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/studyroom-lms.wjthinkbig.com.ico" alt="">계정관리사이트
-        </a>
-        <a class="chip" href="https://www.ncrc.or.kr" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/ncrc.or.kr.ico" alt="">아동권리보장원
-        </a>
-        <a class="chip" href="https://e-childschoolinfo.moe.go.kr" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/e-childschoolinfo.moe.go.kr.ico" alt="">유치원알리미
-        </a>
-        <a class="chip" href="https://info.childcare.go.kr/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/info.childcare.go.kr.ico" alt="">어린이집공개포털
-        </a>
-      </div>
-    </section>
-
-    <section class="section" style="--accent:var(--biz)">
-      <div class="section-title"><span>업무 보조 페이지</span></div>
-      <div class="chip-list">
-        <a class="chip" href="https://www.naver.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/naver.com.ico" alt="">네이버
-        </a>
-        <a class="chip" href="https://www.google.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/google.com.ico" alt="">구글
-        </a>
-        <a class="chip" href="https://www.youtube.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/youtube.com.ico" alt="">유튜브
-        </a>
-        <a class="chip" href="https://www.instagram.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/instagram.com.ico" alt="">인스타
-        </a>
-        <a class="chip" href="https://www.daangn.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/daangn.com.ico" alt="">당근
-        </a>
-        <a class="chip" href="https://blog.naver.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/blog.naver.com.ico" alt="">블로그
-        </a>
-        <a class="chip" href="https://www.alba.co.kr/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/alba.co.kr.ico" alt="">알바천국
-        </a>
-        <a class="chip" href="https://www.jobkorea.co.kr/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/jobkorea.co.kr.ico" alt="">잡코리아
-        </a>
-        <a class="chip" href="https://www.miricanvas.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/miricanvas.com.ico" alt="">미리캔버스
-        </a>
-        <a class="chip" href="https://www.canva.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/canva.com.ico" alt="">CANVA
-        </a>
-      </div>
-    </section>
-
-    <section class="section" style="--accent:var(--ai)">
-      <div class="section-title"><span>AI 사이트</span></div>
-      <div class="chip-list">
-        <a class="chip" href="https://chatgpt.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/chatgpt.com.ico" alt="">챗GPT
-        </a>
-        <a class="chip" href="https://gemini.google.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/gemini.google.com.ico" alt="">제미나이
-        </a>
-        <a class="chip" href="https://claude.ai/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/claude.ai.ico" alt="">클로드
-        </a>
-        <a class="chip" href="https://gamma.app/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/gamma.app.ico" alt="">감마
-        </a>
-        <a class="chip" href="https://notebooklm.google.com/" target="_blank">
-          <img src="https://icons.duckduckgo.com/ip3/notebooklm.google.com.ico" alt="">노트북LM
-        </a>
-      </div>
-    </section>
-
-  </div>
-
   <!-- 영업관리시스템 주요 메뉴 -->
   <section class="section" style="--accent:var(--menu)">
     <div class="section-title"><span>영업관리시스템 주요 메뉴</span></div>
     <div class="menu-cols">
       <div class="menu-col">
-        <span class="menu-chip">일별매출현황</span>
-        <span class="menu-chip">월별매출현황</span>
-        <span class="menu-chip">일별과목현황</span>
-        <span class="menu-chip">월별과목현황</span>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewSalesDaybySum.lep?prgrmId=1008386" target="_blank"><span class="m-main">일별매출현황</span><span class="m-sub">관리자 일 매출 실적</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewSalesMthbySum.lep?prgrmId=1008385" target="_blank"><span class="m-main">월별매출현황</span><span class="m-sub">관리자 월 매출 실적</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrList/viewMbrAnalsDaybySum.lep?prgrmId=1008384" target="_blank"><span class="m-main">일별과목현황</span><span class="m-sub">교사 일 과목수 실적</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrList/viewMbrAnalsMthbySum.lep?prgrmId=1008383" target="_blank"><span class="m-main">월별과목현황</span><span class="m-sub">교사 월 과목수 실적</span></a>
       </div>
       <div class="menu-col">
-        <span class="menu-chip">회원조회</span>
-        <span class="menu-chip">회원변동현황</span>
-        <span class="menu-chip">회원현황</span>
-        <span class="menu-chip">조직별 월별실적현황</span>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewMbrInqrs.lep?prgrmId=1008376" target="_blank"><span class="m-main">회원조회</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrChge/viewMbrChgeSttsChgeStndForHd.lep?prgrmId=2002791" target="_blank"><span class="m-main">회원변동현황</span><span class="m-sub">입회, 계변 리스트 등</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewNewMthbyMbrStts.lep?prgrmId=1008379" target="_blank"><span class="m-main">월별회원현황</span><span class="m-sub">전체 계약리스트 조회</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/alrt/viewOrgnMthbyAlrtDtl.lep?prgrmId=1008125" target="_blank"><span class="m-main">조직별월별실적현황</span><span class="m-sub">실매출액조회</span></a>
       </div>
       <div class="menu-col">
-        <span class="menu-chip">우편번호별 관리과목수</span>
-        <span class="menu-chip">교사별 회비 미납 현황</span>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/alrt/viewZnoActoMngtSbjtList.lep?prgrmId=1008126" target="_blank"><span class="m-main">우편번호별 관리과목수</span><span class="m-sub">미관리 조회</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/recpt/viewTchrActoDuesNpySttsGm.lep?prgrmId=1008294" target="_blank"><span class="m-main">교사별 회비 미납 현황</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/ord/viewElctnCtdtSttsInqr.lep?prgrmId=1008444" target="_blank"><span class="m-main">전자계약서 현황 조회</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewAdjrtEpctMbrAnl.lep?prgrmId=2002886" target="_blank"><span class="m-main">휴회예상회원분석</span><span class="m-sub">휴회 요청 계약수, 실적수 조회</span></a>
       </div>
     </div>
   </section>
+
+  <!-- CP / 업무 / AI : 3단 -->
+  <div class="chip-grid">
+
+    <section class="section" style="--accent:var(--cp)">
+      <div class="section-title"><span>CP 관련 페이지</span></div>
+      <div class="chip-cols">
+        <div class="chip-col">
+          <a class="chip" href="https://docs.google.com/spreadsheets/d/1zbbfdJYLdupmUWwzWXSH58uvrXzxG8oJzLgT8Q_Gj18/edit?gid=2083395296#gid=2083395296" target="_blank">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0OCA0OCI+PHBhdGggZD0iTTkgNGgyMGwxMCAxMHYzMGEyIDIgMCAwIDEtMiAySDlhMiAyIDAgMCAxLTItMlY2YTIgMiAwIDAgMSAyLTJ6IiBmaWxsPSIjMEY5RDU4Ii8+PHBhdGggZD0iTTI5IDRsMTAgMTBIMzFhMiAyIDAgMCAxLTItMlY0eiIgZmlsbD0iIzg3Q0VBQyIvPjxyZWN0IHg9IjEyIiB5PSIxOCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjIwIiBmaWxsPSIjZmZmIi8+PGxpbmUgeDE9IjEyIiB5MT0iMjQiIHgyPSIzNiIgeTI9IjI0IiBzdHJva2U9IiMwRjlENTgiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxMiIgeTE9IjMxIiB4Mj0iMzYiIHkyPSIzMSIgc3Ryb2tlPSIjMEY5RDU4IiBzdHJva2Utd2lkdGg9IjIiLz48bGluZSB4MT0iMjAiIHkxPSIxOCIgeDI9IjIwIiB5Mj0iMzgiIHN0cm9rZT0iIzBGOUQ1OCIgc3Ryb2tlLXdpZHRoPSIyIi8+PGxpbmUgeDE9IjI4IiB5MT0iMTgiIHgyPSIyOCIgeTI9IjM4IiBzdHJva2U9IiMwRjlENTgiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" alt="">전국 기관 DB 리스트
+          </a>
+          <a class="chip" href="https://studyroom-lms.wjthinkbig.com/" target="_blank">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48bGluZSB4MT0iMiIgeTE9IjEyIiB4Mj0iMjIiIHkyPSIxMiIvPjxwYXRoIGQ9Ik0xMiAyYTE1LjMgMTUuMyAwIDAgMSA0IDEwIDE1LjMgMTUuMyAwIDAgMS00IDEwIDE1LjMgMTUuMyAwIDAgMS00LTEwIDE1LjMgMTUuMyAwIDAgMSA0LTEweiIvPjwvc3ZnPg==" alt="">CP계정관리사이트
+          </a>
+        </div>
+        <div class="chip-col">
+          <a class="chip" href="https://www.ncrc.or.kr" target="_blank">
+            <img src="child-logo.png" alt="">아동권리보장원
+          </a>
+          <a class="chip" href="https://e-childschoolinfo.moe.go.kr" target="_blank">
+            <img data-domain="e-childschoolinfo.moe.go.kr" alt="">유치원알리미
+          </a>
+          <a class="chip" href="https://info.childcare.go.kr/" target="_blank">
+            <img src="kids1-logo.png" alt="">어린이집공개포털
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="--accent:var(--biz)">
+      <div class="section-title"><span>업무 보조 페이지</span></div>
+      <div class="chip-cols">
+        <div class="chip-col">
+          <a class="chip" href="https://www.naver.com/" target="_blank">
+            <img data-domain="naver.com" alt="">네이버
+          </a>
+          <a class="chip" href="https://www.google.com/" target="_blank">
+            <img data-domain="google.com" alt="">구글
+          </a>
+          <a class="chip" href="https://www.youtube.com/" target="_blank">
+            <img data-domain="youtube.com" alt="">유튜브
+          </a>
+        </div>
+        <div class="chip-col">
+          <a class="chip" href="https://blog.naver.com/" target="_blank">
+            <img src="blog-logo.png" alt="">블로그
+          </a>
+          <a class="chip" href="https://www.instagram.com/" target="_blank">
+            <img data-domain="instagram.com" alt="">인스타
+          </a>
+          <a class="chip" href="https://www.daangn.com/" target="_blank">
+            <img data-domain="daangn.com" alt="">당근
+          </a>
+        </div>
+        <div class="chip-col">
+          <a class="chip" href="https://www.alba.co.kr/" target="_blank">
+            <img data-domain="alba.co.kr" alt="">알바천국
+          </a>
+          <a class="chip" href="https://www.jobkorea.co.kr/" target="_blank">
+            <img src="job-logo.png" alt="">잡코리아
+          </a>
+          <a class="chip" href="https://www.miricanvas.com/" target="_blank">
+            <img data-domain="miricanvas.com" alt="">미리캔버스
+          </a>
+          <a class="chip" href="https://www.canva.com/" target="_blank">
+            <img data-domain="canva.com" alt="">CANVA
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="--accent:var(--ai)">
+      <div class="section-title"><span>AI 사이트</span></div>
+      <div class="chip-cols">
+        <div class="chip-col">
+          <a class="chip" href="https://chatgpt.com/" target="_blank">
+            <img data-domain="chatgpt.com" alt="">챗GPT
+          </a>
+          <a class="chip" href="https://gemini.google.com/" target="_blank">
+            <img data-domain="gemini.google.com" alt="">제미나이
+          </a>
+          <a class="chip" href="https://claude.ai/" target="_blank">
+            <img data-domain="claude.ai" alt="">클로드
+          </a>
+          <a class="chip" href="https://www.perplexity.ai/" target="_blank">
+            <img data-domain="perplexity.ai" alt="">퍼블렉시티
+          </a>
+        </div>
+        <div class="chip-col">
+          <a class="chip" href="https://grok.com/" target="_blank">
+            <img data-domain="grok.com" alt="">그록
+          </a>
+          <a class="chip" href="https://gamma.app/" target="_blank">
+            <img data-domain="gamma.app" alt="">감마
+          </a>
+          <a class="chip" href="https://notebooklm.google.com/" target="_blank">
+            <img data-domain="notebooklm.google.com" alt="">노트북LM
+          </a>
+        </div>
+        <div class="chip-col">
+          <a class="chip" href="https://klingai.com/" target="_blank">
+            <img data-domain="klingai.com" alt="">클링AI
+          </a>
+          <a class="chip" href="https://suno.com/" target="_blank">
+            <img data-domain="suno.com" alt="">suno
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
 
   <!-- 경쟁사 페이지 -->
   <section class="section" style="--accent:var(--rival)">
@@ -286,7 +339,7 @@
       <div class="rival-group">
         <h3>학습지</h3>
         <div class="tile-grid">
-          <a class="tile" href="https://www.kumon.co.kr/" target="_blank">
+          <a class="tile big-icon" href="https://www.kumon.co.kr/" target="_blank">
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjJfMjE0/MDAxNzI2OTk2MTc3MDMy.twobUvGd9wEFKBDFl1P4dK4DW-isUC4LSaQ193X-Jk8g.qyC2PleDbtfyCnUhfT01VqPRkvmlZG9stb83ws4is4sg.PNG/logo_kumon.png?type=w1600" alt="구몬"></a>
           <a class="tile" href="https://www.kyowonedu.com/" target="_blank">
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTU4/MDAxNzI2OTIyMjYyMDEx.qU5MVaQsAA2BPtuwA1c3gt7AU78RTmM3cdGNn3-ioRsg.fbBBKDiHU74sSr_3f-JtgFDA6sWHXmrd9M04ZFlRdE4g.PNG/logo_redpen.png?type=w1600" alt="빨간펜"></a>
@@ -302,11 +355,11 @@
         <div class="tile-grid">
           <a class="tile" href="https://www.home-learn.co.kr/" target="_blank">
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMzkg/MDAxNzI2OTIxMjkxMjk3.kfxtvUhSO94ndFdXZ829fPdxyk5KwulJbHCLoJwHeREg.R8fR-TIO1S_7Keqno-9ksEEuudIN1Fm8o_l1q2HnXhcg.JPEG/logo_homelearn.jpg?type=w1600" alt="홈런"></a>
-          <a class="tile" href="https://junior.mbest.co.kr/" target="_blank">
+          <a class="tile big-icon" href="https://junior.mbest.co.kr/" target="_blank">
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTAg/MDAxNzI2OTIxMjkwOTQ3.e3i99EWlg82GvRwNVJxgljJsu16QEeeCOQbbSaC78MMg.2uOdvyh-xkGsFli7jEDd4dJrSCgYUMYz7EXH4nDKxDAg.PNG/logo_elihigh.png?type=w1600" alt="엘리하이"></a>
-          <a class="tile" href="https://www.milkt.co.kr/" target="_blank">
+          <a class="tile big-icon" href="https://www.milkt.co.kr/" target="_blank">
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMjk1/MDAxNzI2OTIxMjkxNTc4.q8Z9rpMHiiPG8i15Fm5m5vcfihK1I4I0g-kgzh6t5e8g.-XleyqHPxxCgIKbDnbsDpych17zkIpT3fIJChLwfhDYg.PNG/logo_milkt.png?type=w1600" alt="밀크티"></a>
-          <a class="tile" href="https://www.miraenchoco.com/" target="_blank">
+          <a class="tile big-icon" href="https://www.miraenchoco.com/" target="_blank">
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTMz/MDAxNzI2OTIxMjkwODA5.8LfmE3IgFjmv-yK0vVxikXgx8H_k1rQ-_F60o8dDx4Ig.WnXjlf0Fbz_qUNl0P-d49H5KfMGum4A-I1ADKuNIKj8g.PNG/logo_choco.png?type=w1600" alt="미래엔초코"></a>
         </div>
       </div>
@@ -318,7 +371,7 @@
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMjI2/MDAxNzI2OTIxMjkxMzIx.3PWWa2ZHbaMtSZ4VS2o9CRGL3ekAn_iZnOKyI6aqbwkg.iKpof9hloYtBr2HUNav9ifne2bKe-6er06Z9HW2vAGsg.PNG/logo_summit.png?type=w1600" alt="써밋"></a>
           <a class="tile" href="https://www.smarthb.co.kr/" target="_blank">
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMSAg/MDAxNzI2OTIxMjkxMzI1.e4S6CiKvC3IxZGdou9c4oFiHzRes6qAqfAuUa82kwZ4g.lLJbnM3E0v1140yr02OU3oTylQOeHzlUOvpOFkL4CgEg.PNG/logo_hb.png?type=w1600" alt="스마트해법"></a>
-          <a class="tile" href="https://gtclass.co.kr/" target="_blank">
+          <a class="tile big-icon" href="https://gtclass.co.kr/" target="_blank">
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTUy/MDAxNzI2OTIxMjkxMDQw.ACuz70Sv71JBVyWuGLInp4q36MYuvmXmtNbEeYad7jMg._oquCB_RQKxUqBosm_Cq_GlC8I8-KLNpNT5EQWYsasUg.PNG/logo_gitan.png?type=w1600" alt="기탄사고력"></a>
           <a class="tile" href="https://www.asobi.co.kr/" target="_blank">
             <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfODUg/MDAxNzI2OTIyNTAzNjk3.2kcHuUepiKCvYpxhgtyoCu4eQhqEA7aJvJcjiHvPI5Ug.x31DQgot10pZLp718NB8zxky-O6g4QQv5YPdmDdt3hQg.PNG/logo_asobi.png?type=w1600" alt="아소비"></a>
@@ -343,8 +396,6 @@
   </section>
 
 </div>
-
-<footer>업무 사이트 모음 · 내부 참고용</footer>
 
 </body>
 </html>
