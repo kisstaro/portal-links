@@ -95,6 +95,18 @@
   .menu-chip .m-main{white-space:nowrap;flex-shrink:0;}
   .menu-chip .m-sub{font-size:12px;font-weight:400;color:#5b9b93;text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;}
   a.menu-chip:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);background:#e7f8f6;}
+  /* 가운데 줄: 파랑 계열 */
+  .menu-col.blue .menu-chip{background:#f0f6ff;color:#1d4ed8;border-color:#d4e4fd;}
+  .menu-col.blue .menu-chip .m-sub{color:#5b7fc4;}
+  .menu-col.blue a.menu-chip:hover{background:#e3eeff;}
+  /* 오른쪽 줄: 분홍 계열 */
+  .menu-col.pink .menu-chip{background:#fff1f6;color:#be185d;border-color:#fbd3e3;}
+  .menu-col.pink .menu-chip .m-sub{color:#c46a92;}
+  .menu-col.pink a.menu-chip:hover{background:#ffe4ef;}
+  /* AI업무지원 포털: 보라 그라데이션 */
+  .menu-col .menu-chip.ai{background:linear-gradient(90deg,#5b6fd6 0%,#7c55c9 100%);color:#fff;border-color:transparent;font-weight:700;}
+  .menu-col .menu-chip.ai .m-sub{color:rgba(255,255,255,.85);}
+  .menu-col a.menu-chip.ai:hover{background:linear-gradient(90deg,#5166cf 0%,#714ac0 100%);}
 
   /* 경쟁사 */
   .rival-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
@@ -204,18 +216,21 @@
         <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewSalesMthbySum.lep?prgrmId=1008385" target="_blank"><span class="m-main">월별매출현황</span><span class="m-sub">관리자 월 매출 실적</span></a>
         <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrList/viewMbrAnalsDaybySum.lep?prgrmId=1008384" target="_blank"><span class="m-main">일별과목현황</span><span class="m-sub">교사 일 과목수 실적</span></a>
         <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrList/viewMbrAnalsMthbySum.lep?prgrmId=1008383" target="_blank"><span class="m-main">월별과목현황</span><span class="m-sub">교사 월 과목수 실적</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/rslMngt/alrt/stts/viewTchrActoMbAlrtSttsNew.lep?prgrmId=2003031" target="_blank"><span class="m-main">신)교사별 문봉실적현황</span></a>
       </div>
-      <div class="menu-col">
+      <div class="menu-col blue">
         <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewMbrInqrs.lep?prgrmId=1008376" target="_blank"><span class="m-main">회원조회</span></a>
-        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrChge/viewMbrChgeSttsChgeStndForHd.lep?prgrmId=2002791" target="_blank"><span class="m-main">회원변동현황</span><span class="m-sub">입회, 계변 리스트 등</span></a>
-        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewNewMthbyMbrStts.lep?prgrmId=1008379" target="_blank"><span class="m-main">월별회원현황</span><span class="m-sub">전체 계약리스트 조회</span></a>
-        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/alrt/viewOrgnMthbyAlrtDtl.lep?prgrmId=1008125" target="_blank"><span class="m-main">조직별월별실적현황</span><span class="m-sub">실매출액조회</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrChge/viewMbrChgeSttsChgeStndForHd.lep?prgrmId=2002791" target="_blank"><span class="m-main">회원변동현황</span><span class="m-sub">입회, 휴회, 계변 등 리스트 조회</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewNewMthbyMbrStts.lep?prgrmId=1008379" target="_blank"><span class="m-main">NEW월별회원현황</span><span class="m-sub">전체 계약리스트 조회</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewSmartAllClassCp.lep?prgrmId=2001522" target="_blank"><span class="m-main">스마트올CP 판매현황</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/ord/viewElctnCtdtSttsInqr.lep?prgrmId=1008444" target="_blank"><span class="m-main">전자계약서 현황 조회</span></a>
       </div>
-      <div class="menu-col">
+      <div class="menu-col pink">
         <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/alrt/viewZnoActoMngtSbjtList.lep?prgrmId=1008126" target="_blank"><span class="m-main">우편번호별 관리과목수</span><span class="m-sub">미관리 조회</span></a>
         <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/recpt/viewTchrActoDuesNpySttsGm.lep?prgrmId=1008294" target="_blank"><span class="m-main">교사별 회비 미납 현황</span></a>
-        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/ord/viewElctnCtdtSttsInqr.lep?prgrmId=1008444" target="_blank"><span class="m-main">전자계약서 현황 조회</span></a>
+        <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewBcEndPrrntDtls.lep?prgrmId=1008389" target="_blank"><span class="m-main">스마트씽크빅 종료예정리스트</span></a>
         <a class="menu-chip" href="https://mng.wjthinkbig.com/mng/mbrMngt/gyomun/mbrStts/viewAdjrtEpctMbrAnl.lep?prgrmId=2002886" target="_blank"><span class="m-main">휴회예상회원분석</span><span class="m-sub">휴회 요청 계약수, 실적수 조회</span></a>
+        <a class="menu-chip ai" href="https://agent-portal.wjtb.kr/" target="_blank"><span class="m-main">AI업무지원 포털</span></a>
       </div>
     </div>
   </section>
