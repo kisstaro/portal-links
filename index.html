@@ -66,7 +66,7 @@
   .tile.placeholder .tag{font-size:10px;color:#fff;background:var(--sub);border-radius:999px;padding:1px 7px;margin-top:1px;}
 
   /* 칩 리스트 (CP/업무/AI) */
-  .chip-grid{grid-template-columns:auto minmax(0,1fr) auto;display:grid;gap:16px;align-items:start;}
+  .chip-grid{grid-template-columns:minmax(max-content,1.2fr) max-content minmax(0,1fr);display:grid;gap:16px;align-items:start;}
   .section.narrow{padding-left:20px;padding-right:20px;}
   /* 화면이 좁아지면 업무 보조 + CP를 윗줄에, AI를 아랫줄 전체 폭으로 */
   @media (max-width:1200px) and (min-width:861px){
@@ -76,7 +76,7 @@
   @media (max-width:860px){.chip-grid{grid-template-columns:1fr;}}
   .chip-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
   .chip-cols{display:flex;gap:8px;align-items:flex-start;flex-wrap:nowrap;}
-  .chip-col{display:flex;flex-direction:column;align-items:flex-start;gap:7px;flex:0 1 auto;min-width:0;}
+  .chip-col{display:flex;flex-direction:column;align-items:flex-start;gap:7px;flex:0 0 auto;}
   .chip{
     display:inline-flex;align-items:center;gap:6px;
     background:#fff;border:1px solid var(--line);border-radius:999px;
@@ -87,11 +87,12 @@
   .chip img{width:16px;height:16px;border-radius:3px;flex:none;}
   /* AI 소분류 + 설명 칩 */
   .ai-cols{gap:14px;}
-  .ai-cols .chip-col{flex:1 1 0;}
+  .ai-cols .chip-col{flex:0 1 auto;}
   .sub-label{font-size:12px;font-weight:700;color:var(--ai);letter-spacing:.3px;margin:0 0 2px 2px;}
-  .chip.has-desc{border-radius:12px;padding:6px 11px;align-items:center;}
-  .chip .c-txt{display:flex;flex-direction:column;line-height:1.25;}
-  .chip .c-desc{font-size:11px;font-weight:400;color:var(--sub);}
+  .chip-grid .chip{min-height:36px;}
+  .chip.has-desc{border-radius:12px;padding:3px 11px;align-items:center;}
+  .chip .c-txt{display:grid;line-height:1.15;}
+  .chip .c-desc{font-size:10.5px;font-weight:400;color:var(--sub);}
   .chip.placeholder{border-style:dashed;color:var(--sub);background:transparent;}
   .chip.placeholder .tag{font-size:10px;color:#fff;background:var(--sub);border-radius:999px;padding:1px 6px;margin-left:2px;}
 
@@ -308,43 +309,43 @@
         <div class="chip-col">
           <div class="sub-label">대화 · 검색</div>
           <a class="chip" href="https://chatgpt.com/" target="_blank">
-            <img data-domain="chatgpt.com" alt="">챗GPT
-          </a>
-          <a class="chip" href="https://claude.ai/" target="_blank">
-            <img data-domain="claude.ai" alt="">클로드
+            <img data-domain="chatgpt.com" alt="">ChatGPT
           </a>
           <a class="chip" href="https://gemini.google.com/" target="_blank">
-            <img data-domain="gemini.google.com" alt="">제미나이
+            <img data-domain="gemini.google.com" alt="">Gemini
+          </a>
+          <a class="chip" href="https://claude.ai/" target="_blank">
+            <img data-domain="claude.ai" alt="">Claude
           </a>
           <a class="chip" href="https://grok.com/" target="_blank">
-            <img data-domain="grok.com" alt="">그록
+            <img data-domain="grok.com" alt="">Grok
           </a>
-          <a class="chip has-desc" href="https://www.perplexity.ai/" target="_blank">
-            <img data-domain="perplexity.ai" alt=""><span class="c-txt"><span class="c-name">퍼플렉시티</span><span class="c-desc">출처 달린 AI 검색</span></span>
+          <a class="chip" href="https://www.perplexity.ai/" target="_blank">
+            <img data-domain="perplexity.ai" alt="">Perplexity
           </a>
         </div>
         <div class="chip-col">
           <div class="sub-label">자료 · 문서</div>
           <a class="chip has-desc" href="https://notebooklm.google.com/" target="_blank">
-            <img data-domain="notebooklm.google.com" alt=""><span class="c-txt"><span class="c-name">노트북LM</span><span class="c-desc">올린 자료로 요약·질문</span></span>
+            <img data-domain="notebooklm.google.com" alt=""><span class="c-txt"><span class="c-name">NotebookLM</span><span class="c-desc">올린 자료로 요약·질문</span></span>
           </a>
           <a class="chip has-desc" href="https://www.genspark.ai/" target="_blank">
-            <img data-domain="genspark.ai" alt=""><span class="c-txt"><span class="c-name">젠스파크</span><span class="c-desc">조사부터 장표·문서까지</span></span>
+            <img data-domain="genspark.ai" alt=""><span class="c-txt"><span class="c-name">Genspark</span><span class="c-desc">조사부터 장표·문서까지</span></span>
           </a>
           <a class="chip has-desc" href="https://gamma.app/" target="_blank">
-            <img data-domain="gamma.app" alt=""><span class="c-txt"><span class="c-name">감마</span><span class="c-desc">PPT 자동 생성</span></span>
+            <img data-domain="gamma.app" alt=""><span class="c-txt"><span class="c-name">Gamma</span><span class="c-desc">PPT 자동 생성</span></span>
           </a>
         </div>
         <div class="chip-col">
           <div class="sub-label">영상 · 음성 · 음악</div>
           <a class="chip has-desc" href="https://klingai.com/" target="_blank">
-            <img data-domain="klingai.com" alt=""><span class="c-txt"><span class="c-name">클링AI</span><span class="c-desc">글·사진으로 영상 생성</span></span>
+            <img data-domain="klingai.com" alt=""><span class="c-txt"><span class="c-name">Kling AI</span><span class="c-desc">글·사진으로 영상 생성</span></span>
           </a>
           <a class="chip has-desc" href="https://typecast.ai/kr" target="_blank">
-            <img data-domain="typecast.ai" alt=""><span class="c-txt"><span class="c-name">타입캐스트</span><span class="c-desc">AI 성우 음성 더빙</span></span>
+            <img data-domain="typecast.ai" alt=""><span class="c-txt"><span class="c-name">Typecast</span><span class="c-desc">AI 성우 음성 더빙</span></span>
           </a>
           <a class="chip has-desc" href="https://suno.com/" target="_blank">
-            <img data-domain="suno.com" alt=""><span class="c-txt"><span class="c-name">suno</span><span class="c-desc">AI로 노래 만들기</span></span>
+            <img data-domain="suno.com" alt=""><span class="c-txt"><span class="c-name">Suno</span><span class="c-desc">AI로 노래 만들기</span></span>
           </a>
         </div>
       </div>
@@ -360,8 +361,8 @@
           <a class="chip" href="https://studyroom-lms.wjthinkbig.com/" target="_blank">
             <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOWNhM2FmIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PGNpcmNsZSBjeD0iMTIiIGN5PSIxMiIgcj0iMTAiLz48bGluZSB4MT0iMiIgeTE9IjEyIiB4Mj0iMjIiIHkyPSIxMiIvPjxwYXRoIGQ9Ik0xMiAyYTE1LjMgMTUuMyAwIDAgMSA0IDEwIDE1LjMgMTUuMyAwIDAgMS00IDEwIDE1LjMgMTUuMyAwIDAgMS00LTEwIDE1LjMgMTUuMyAwIDAgMSA0LTEweiIvPjwvc3ZnPg==" alt="">CP계정관리사이트
           </a>
-          <a class="chip" href="https://www.ncrc.or.kr" target="_blank">
-            <img src="child-logo.png" alt="">아동권리보장원
+          <a class="chip has-desc" href="https://www.ncrc.or.kr" target="_blank">
+            <img src="child-logo.png" alt=""><span class="c-txt"><span class="c-name">아동권리보장원</span><span class="c-desc">아동센터검색</span></span>
           </a>
           <a class="chip" href="https://e-childschoolinfo.moe.go.kr" target="_blank">
             <img data-domain="e-childschoolinfo.moe.go.kr" alt="">유치원알리미
