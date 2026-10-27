@@ -66,17 +66,20 @@
   .tile.placeholder .tag{font-size:10px;color:#fff;background:var(--sub);border-radius:999px;padding:1px 7px;margin-top:1px;}
 
   /* 칩 리스트 (CP/업무/AI) */
-  .chip-grid{grid-template-columns:minmax(max-content,1.2fr) max-content minmax(0,1fr);display:grid;gap:16px;align-items:start;}
-  .section.narrow{padding-left:20px;padding-right:20px;}
+  .chip-grid{grid-template-columns:minmax(max-content,1.2fr) max-content minmax(max-content,1fr);display:grid;gap:16px;align-items:stretch;}
+  .chip-grid > .section{padding-left:20px;padding-right:20px;}
+  .chip-grid > .section.narrow{padding-left:16px;padding-right:16px;}
   /* 화면이 좁아지면 업무 보조 + CP를 윗줄에, AI를 아랫줄 전체 폭으로 */
-  @media (max-width:1200px) and (min-width:861px){
+  @media (max-width:1260px) and (min-width:861px){
     .chip-grid{grid-template-columns:minmax(0,1fr) auto;}
     .chip-grid > .section:nth-child(2){order:3;grid-column:1 / -1;}
   }
   @media (max-width:860px){.chip-grid{grid-template-columns:1fr;}}
   .chip-list{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
   .chip-cols{display:flex;gap:8px;align-items:flex-start;flex-wrap:nowrap;}
-  .chip-col{display:flex;flex-direction:column;align-items:flex-start;gap:7px;flex:0 0 auto;}
+  /* 열 너비를 가장 넓은 열에 맞춤 */
+  .chip-cols.eq{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;align-items:start;width:max-content;max-width:100%;}
+  .chip-col{display:flex;flex-direction:column;align-items:stretch;gap:7px;flex:0 0 auto;}
   .chip{
     display:inline-flex;align-items:center;gap:6px;
     background:#fff;border:1px solid var(--line);border-radius:999px;
@@ -90,6 +93,9 @@
   .ai-cols .chip-col{flex:0 1 auto;}
   .sub-label{font-size:12px;font-weight:700;color:var(--ai);letter-spacing:.3px;margin:0 0 2px 2px;}
   .chip-grid .chip{min-height:36px;}
+  .chip-grid .chip.has-desc,
+  .ai-cols .chip,
+  .section.narrow .chip{border-radius:12px;}
   .chip.has-desc{border-radius:12px;padding:3px 11px;align-items:center;}
   .chip .c-txt{display:grid;line-height:1.15;}
   .chip .c-desc{font-size:10.5px;font-weight:400;color:var(--sub);}
@@ -254,7 +260,7 @@
 
     <section class="section" style="--accent:var(--biz)">
       <div class="section-title"><span>업무 보조 페이지</span></div>
-      <div class="chip-cols">
+      <div class="chip-cols eq">
         <div class="chip-col">
           <a class="chip" href="https://www.naver.com/" target="_blank">
             <img data-domain="naver.com" alt="">네이버
@@ -320,8 +326,8 @@
           <a class="chip" href="https://grok.com/" target="_blank">
             <img data-domain="grok.com" alt="">Grok
           </a>
-          <a class="chip" href="https://www.perplexity.ai/" target="_blank">
-            <img data-domain="perplexity.ai" alt="">Perplexity
+          <a class="chip has-desc" href="https://www.perplexity.ai/" target="_blank">
+            <img data-domain="perplexity.ai" alt=""><span class="c-txt"><span class="c-name">Perplexity</span><span class="c-desc">출처 달린 AI 검색</span></span>
           </a>
         </div>
         <div class="chip-col">
