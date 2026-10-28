@@ -19,6 +19,7 @@
     --ai:#8b5cf6;
     --menu:#14b8a6;
     --rival:#64748b;
+    --own:#f59e0b;
     --shadow:0 2px 10px rgba(16,20,30,.06);
     --shadow-hover:0 8px 18px rgba(16,20,30,.12);
   }
@@ -49,6 +50,10 @@
   .tile-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;}
   .main-grid-row{margin-bottom:14px;}
   .main-grid-row:last-child{margin-bottom:0;}
+  /* 메인 업무 페이지: 한 줄 (좁으면 줄바꿈) */
+  .main-one-row{flex-wrap:nowrap;}
+  .main-one-row .tile{flex:1 1 0;min-width:0;max-width:162px;}
+  @media (max-width:1000px){.main-one-row{flex-wrap:wrap;}.main-one-row .tile{flex:0 1 138px;min-width:118px;}}
   .tile{
     background:#fafbfc;border:1px solid var(--line);border-radius:14px;
     padding:14px 11px 11px;display:flex;flex-direction:column;align-items:center;gap:7px;
@@ -180,7 +185,7 @@
   <!-- 메인 업무 페이지 -->
   <section class="section" style="--accent:var(--main)">
     <div class="section-title"><span>메인 업무 페이지</span></div>
-    <div class="tile-grid main-grid-row">
+    <div class="tile-grid main-one-row">
       <a class="tile" href="https://portal.wjthinkbig.com/" target="_blank">
         <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjJfMjAx/MDAxNzI2OTk1MzQ4ODIy.H_jxxbXlvVZbbwmqKnKA4IlOdix_UkgKuatppryAZ5Qg.EBjfo6rlBxgAdSIiZeC7Bq44zXFxyikh39kpbl-USWIg.PNG/logo_wjnet.png?type=w1600" alt="웅진넷">
         <span class="cap">웅진넷</span>
@@ -197,35 +202,17 @@
         <img src="academy_logo.png" alt="씽크빅 아카데미">
         <span class="cap">씽크빅 아카데미</span>
       </a>
-    </div>
-    <div class="tile-grid main-grid-row">
-      <a class="tile" href="https://www.wjthinkbig.com/" target="_blank">
-        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMzIg/MDAxNzI2OTIxMjkwOTMx.Afwbq57i8BNyvXmxguNEjcvI6ifXqiHL_dmd5PcZ13sg.prVn8H21kQqhgGzNkPD7FB16kApvAcerJjsPQRjbN9sg.PNG/logo_thinkbig.png?type=w1600" alt="웅진씽크빅">
-        <span class="cap">웅진씽크빅</span>
-      </a>
-      <a class="tile" href="https://smartall.wjthinkbig.com/" target="_blank">
-        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTU5/MDAxNzI2OTIxMzgzNzcx.MjP5hORiwZN8C4x3Hbpuhy8UM7U-5BUTKOwqQuvRpnIg.5KSVJ86NIg4qOuCPTcVXdZaXKf5TKTgNuWTwv2OXLTgg.PNG/logo_smartall.png?type=w1600" alt="스마트올">
-        <span class="cap">스마트올</span>
-      </a>
-      <a class="tile" href="https://smartallmid.wjthinkbig.com/" target="_blank">
-        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTAx/MDAxNzI2OTIxMzg2NjYz.A4HEOrODTIA-a2DTHQMJphKGKLrfMicfJOx_tO8DIH0g.5gD-M-3pCmaiOSCJh2ZEbPjh7sJxR9r1FT2CRhX7Yp0g.PNG/logo_smartallmid.png?type=w1600" alt="스마트올중학">
-        <span class="cap">스마트올중학</span>
-      </a>
-      <a class="tile" href="https://www.smartallclass.co.kr/" target="_blank">
-        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfNTkg/MDAxNzI2OTIxMjkwNzk0.nqrB_rGN2shO44S09OyQlWjmAbZgDJqWPQx32ECYIlEg.mVmcal5PrnseiY14Cr65nOFmOWFoXzlNunSFcQTRCG4g.PNG/logo_class.png?type=w1600" alt="스마트올클래스">
-        <span class="cap">스마트올클래스</span>
-      </a>
-      <a class="tile" href="https://smartallcp.co.kr/" target="_blank">
-        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjJfMjk4/MDAxNzI2OTk2MDM1OTA1.tWbC0ucb_-ZPL7muTUTKRt7h7ZAyUlJchdbE2HfZo1Qg.LqGgxVndJLeHmN69iqZ05mNldIXzWaYM_XAZUBg-RQ0g.PNG/logo_cp.png?type=w1600" alt="스마트올CP">
-        <span class="cap">스마트올CP</span>
-      </a>
-      <a class="tile" href="https://wjtb.udemy.com/organization/home/" target="_blank">
-        <img src="udemy-logo.png" alt="유데미">
-        <span class="cap">유데미</span>
+      <a class="tile" href="https://ndbm.wjthinkbig.com/authentication/loginPage" target="_blank">
+        <img src="dbm-logo.png" alt="교문DBM시스템">
+        <span class="cap">교문DBM시스템</span>
       </a>
       <a class="tile" href="https://cosmic-meerkat-4bd7a9.netlify.app/" target="_blank">
         <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmY3YTFhIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PHJlY3QgeD0iNCIgeT0iMiIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIwIiByeD0iMiIvPjxsaW5lIHgxPSI4IiB5MT0iNiIgeDI9IjE2IiB5Mj0iNiIvPjxsaW5lIHgxPSI4IiB5MT0iMTAiIHgyPSI4LjAxIiB5Mj0iMTAiLz48bGluZSB4MT0iMTIiIHkxPSIxMCIgeDI9IjEyLjAxIiB5Mj0iMTAiLz48bGluZSB4MT0iMTYiIHkxPSIxMCIgeDI9IjE2LjAxIiB5Mj0iMTAiLz48bGluZSB4MT0iOCIgeTE9IjE0IiB4Mj0iOC4wMSIgeTI9IjE0Ii8+PGxpbmUgeDE9IjEyIiB5MT0iMTQiIHgyPSIxMi4wMSIgeTI9IjE0Ii8+PGxpbmUgeDE9IjE2IiB5MT0iMTQiIHgyPSIxNi4wMSIgeTI9IjE0Ii8+PGxpbmUgeDE9IjgiIHkxPSIxOCIgeDI9IjguMDEiIHkyPSIxOCIvPjxsaW5lIHgxPSIxMiIgeTE9IjE4IiB4Mj0iMTIuMDEiIHkyPSIxOCIvPjxsaW5lIHgxPSIxNiIgeTE9IjE4IiB4Mj0iMTYuMDEiIHkyPSIxOCIvPjwvc3ZnPg==" alt="급여계산기">
         <span class="cap">급여계산기</span>
+      </a>
+      <a class="tile" href="https://wjtb.udemy.com/organization/home/" target="_blank">
+        <img src="udemy-logo.png" alt="유데미">
+        <span class="cap">유데미</span>
       </a>
     </div>
   </section>
@@ -384,6 +371,33 @@
     </section>
 
   </div>
+
+  <!-- 자사 홈페이지 -->
+  <section class="section" style="--accent:var(--own)">
+    <div class="section-title"><span>자사 홈페이지</span></div>
+    <div class="tile-grid">
+      <a class="tile" href="https://www.wjthinkbig.com/" target="_blank">
+        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMzIg/MDAxNzI2OTIxMjkwOTMx.Afwbq57i8BNyvXmxguNEjcvI6ifXqiHL_dmd5PcZ13sg.prVn8H21kQqhgGzNkPD7FB16kApvAcerJjsPQRjbN9sg.PNG/logo_thinkbig.png?type=w1600" alt="웅진씽크빅">
+        <span class="cap">웅진씽크빅</span>
+      </a>
+      <a class="tile" href="https://smartall.wjthinkbig.com/" target="_blank">
+        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTU5/MDAxNzI2OTIxMzgzNzcx.MjP5hORiwZN8C4x3Hbpuhy8UM7U-5BUTKOwqQuvRpnIg.5KSVJ86NIg4qOuCPTcVXdZaXKf5TKTgNuWTwv2OXLTgg.PNG/logo_smartall.png?type=w1600" alt="스마트올">
+        <span class="cap">스마트올</span>
+      </a>
+      <a class="tile" href="https://smartallmid.wjthinkbig.com/" target="_blank">
+        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfMTAx/MDAxNzI2OTIxMzg2NjYz.A4HEOrODTIA-a2DTHQMJphKGKLrfMicfJOx_tO8DIH0g.5gD-M-3pCmaiOSCJh2ZEbPjh7sJxR9r1FT2CRhX7Yp0g.PNG/logo_smartallmid.png?type=w1600" alt="스마트올중학">
+        <span class="cap">스마트올중학</span>
+      </a>
+      <a class="tile" href="https://www.smartallclass.co.kr/" target="_blank">
+        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjFfNTkg/MDAxNzI2OTIxMjkwNzk0.nqrB_rGN2shO44S09OyQlWjmAbZgDJqWPQx32ECYIlEg.mVmcal5PrnseiY14Cr65nOFmOWFoXzlNunSFcQTRCG4g.PNG/logo_class.png?type=w1600" alt="스마트올클래스">
+        <span class="cap">스마트올클래스</span>
+      </a>
+      <a class="tile" href="https://smartallcp.co.kr/" target="_blank">
+        <img src="https://cafeptthumb-phinf.pstatic.net/MjAyNDA5MjJfMjk4/MDAxNzI2OTk2MDM1OTA1.tWbC0ucb_-ZPL7muTUTKRt7h7ZAyUlJchdbE2HfZo1Qg.LqGgxVndJLeHmN69iqZ05mNldIXzWaYM_XAZUBg-RQ0g.PNG/logo_cp.png?type=w1600" alt="스마트올CP">
+        <span class="cap">스마트올CP</span>
+      </a>
+    </div>
+  </section>
 
   <!-- 경쟁사 페이지 -->
   <section class="section" style="--accent:var(--rival)">
